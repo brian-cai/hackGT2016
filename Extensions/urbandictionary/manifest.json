@@ -1,0 +1,18 @@
+{
+  "name": "Urbandictionary API",
+  "description": "1st iteration",
+  "version": "1.0",
+  "manifest_version": 2,
+  "permissions": ["activeTab", "fontSettings", "notifications", "tabs", "webRequest", "*://*/*"],
+  "background": {
+    "scripts": ["udicAPI.html"]
+  },
+
+  "browser_action": {
+    "default_icon" : "icon.png",
+    "default_title": "Testing Urbandictionary"
+    
+  }
+  
+  
+}
