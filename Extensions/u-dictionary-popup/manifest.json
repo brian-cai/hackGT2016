@@ -5,7 +5,7 @@
   "manifest_version": 2,
   "permissions": ["background","activeTab", "fontSettings", "notifications", "tabs","contextMenus", "*://*/*"],
   "background": {
-    "scripts": ["pop.js"]},
+    "page": "popup.html"},
     
  
   
