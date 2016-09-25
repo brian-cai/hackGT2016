@@ -1,4 +1,3 @@
-var theArray;
 /* the OG Http Request
 function loadUrban() {
     var xhr = new XMLHttpRequest();
@@ -13,6 +12,7 @@ function loadUrban() {
     console.log(elements.length);
 }
 */
+var theArray;
 var result = "";
 
 function testAj()
@@ -96,6 +96,21 @@ function gText(e) {
 
 document.onmouseup = gText;
 if (!document.all) document.captureEvents(Event.MOUSEUP);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //returns one char each apparently
 /*function myFunction(arr) {
     for (var i = 0; i < arr.length; i++) {

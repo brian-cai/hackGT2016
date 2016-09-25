@@ -3,9 +3,10 @@
   "description": "1st iteration",
   "version": "1.0",
   "manifest_version": 2,
-  "permissions": ["activeTab", "fontSettings", "notifications", "tabs", "*://*/*"],
+  "permissions": ["activeTab", "fontSettings", "notifications", "tabs","contextMenus", "*://*/*"],
   "background": {
     "scripts": ["background.js"]
+    
  
   },
 
