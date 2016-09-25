@@ -1,29 +1,40 @@
-chrome.browserAction.onClicked.addListener(function(tab) {
-prompt();
-})
 
-/*
+
+
 chrome.browserAction.onClicked.addListener(function(tab) {
   // No tabs or host permissions needed!
   
   //for js
   
-
+/*
   
   chrome.tabs.executeScript({
     file: "udicAPI.html"
   });
-  
+*/  
 
-  chrome.tabs.create('url': 'file:///C:/Georgia%20Tech/hackGT2016/Extensions/urbandictionary/udicAPI.html', 
+    chrome.tabs.create({url: "file:///C:/Georgia%20Tech/hackGT2016/Extensions/urbandictionary/udicAPI.html"}, 
     function (tab){
-    alert("1234");
+    console.log("Successfully opened new tab");
   })
+
 
   
 
 });
-*/
+var t = '';
+function gText(e) {
+    t = (document.all) ? document.selection.createRange().text : document.getSelection();
+
+    getDef(t, function(result) {
+        alert(result)
+    });
+    //document.getElementById('input').value = t;
+}
+document.onmouseup = gText;
+if (!document.all) document.captureEvents(Event.MOUSEUP);
+
+
 function doIt() {
             function getRandomColor() {
                 var letters = '0123456789ABCDEF';
@@ -37,3 +48,5 @@ function doIt() {
             document.body.style.backgroundColor= color;
             // color;
         }
+
+
