@@ -3,7 +3,8 @@
   "description": "Figured out the API, now trying to implement popups",
   "version": "1.1.0",
   "manifest_version": 2,
-  "permissions": ["background","activeTab", "fontSettings", "notifications", "tabs","contextMenus", "*://*/*"],
+  "permissions": ["storage", "http://*/*",
+        "https://*/*","background","activeTab", "tabs","contextMenus"],
   "background": {
     "page": "popup.html"},
     

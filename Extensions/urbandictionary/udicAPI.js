@@ -12,11 +12,14 @@ function loadUrban() {
     console.log(elements.length);
 }
 */
-var theArray;
-var result = "";
+//var theArray;
+//var result = "";
 
 function testAj(entry)
 {
+
+
+
         // Request the JSON and process it
     $.ajax({
         type:'GET',

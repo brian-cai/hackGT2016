@@ -1,12 +1,53 @@
 searchUrbanDict = function(word){
 
     var query = word.selectionText;
-    console.log(query)
+    console.log(query);
+
     //testAj(query); 
-    chrome.tabs.create({url: "file:///C:/Georgia%20Tech/hackGT2016/Extensions/urbandictionary/udicAPI.html"})
-        
-        
+    //getDef(query, function(result){
+    //    alert(result)
+    //});
+    //console.log(getDef(query, result));
+    //};
+    //chrome.tabs.create({url: "file:///C:/Georgia%20Tech/hackGT2016/Extensions/urbandictionary/udicAPI.html"})
+    chrome.tabs.create({url: "http://api.urbandictionary.com/v0/define?term=" + query})  
+    //getDef(query,function(result){
+    //    alert(result)
+    //});
  }
+
+
+function getDef(result2, callback)
+{
+        // Request the JSON and process it
+    $.ajax({
+        type:'GET',
+        url:"http://api.urbandictionary.com/v0/define?term=" + result2,
+        success:function(data) {
+                console.log("success!\n");
+                //this prints out the object object
+                console.log(data);
+
+                //saves the thing into an Array
+                theArray = data;
+                var result = "";
+                for (var i = 0; i<theArray.list.length; i++) {
+                    result += ("Definition " + (i+1) + ": " + theArray.list[i].definition + "\n");
+                    result += ("Thumbs up: " + theArray.list[i].thumbs_up + "\n");
+                    result += ("Thumbs down: " + theArray.list[i].thumbs_down + "\n\n");
+                }
+                
+                console.log(result);
+                callback(result);
+
+ 
+
+        },
+        
+        dataType:'jsonp'
+    });
+}
+
 
 
  //console.log(word.selectionText);
@@ -52,7 +93,8 @@ function testAj(searchT,callback)
 
 chrome.contextMenus.create({
  title: "Testing Popups",
- contexts:["selection"],  // ContextType
+ contexts: ["all"],
+ //contexts:["selection"],  // ContextType
  onclick: searchUrbanDict // A callback function
 });
 
