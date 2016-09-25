@@ -2,21 +2,22 @@
 <html>
 <head>
 <style>
-p {
+div {
     white-space: pre;
 }
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
 <script src="udicAPI.js"></script>
+<script type="text/javascript" src="/background.js"></script>
 
 <script>
 //this makes the document ready to disappear
-$(document).ready(function(){
+/*$(document).ready(function(){
     $("p").click(function(){
         //$(this).hide();
     });
-
+/*
     
 });
 /*$(document).ready(function(){
@@ -24,21 +25,6 @@ $(document).ready(function(){
         */
 
 
-//this is a function that changes the background to a random color
-function doIt() {
-            function getRandomColor() {
-                var letters = '0123456789ABCDEF';
-                var color = '#';
-                for (var i = 0; i < 6; i++ ) {
-                    color += letters[Math.floor(Math.random() * 16)];
-                }
-                return color;
-                }
-            var color = getRandomColor();
-            document.body.style.backgroundColor= color;
-            // color;
-        }
-    
 
     
 </script>
@@ -48,14 +34,13 @@ function doIt() {
 <body>
 <!-- This runs the doIt() function and maps it to the button. >Run the request< is the name-->
   <button onclick="doIt()">Change the Background Color</button>
-  <div id="output">The API request is:</div>
+  <div id="data"></div>
 <!--  <p>"Click this to disappear!"</p> -->
 
 
 
-<h1>Urban Dictionary</h1>
+<h1>***Urban Dictionary***</h1>
 
-<p id="data"></p>
   
 </body>
 </html>
