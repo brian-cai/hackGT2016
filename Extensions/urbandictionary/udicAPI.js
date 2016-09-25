@@ -15,12 +15,12 @@ function loadUrban() {
 var theArray;
 var result = "";
 
-function testAj()
+function testAj(entry)
 {
         // Request the JSON and process it
     $.ajax({
         type:'GET',
-        url:"http://api.urbandictionary.com/v0/define?term=" + prompt("type in the word"),
+        url:"http://api.urbandictionary.com/v0/define?term=" + entry,
         //data:"id="+flickrid+"&lang=en-us&format=json&jsoncallback=?",
         success:function(data) {
 
@@ -79,7 +79,7 @@ function getDef(result2, callback)
 }
 
 //loadUrban();
-testAj();
+testAj(prompt());
 
 
 
@@ -97,7 +97,39 @@ function gText(e) {
 document.onmouseup = gText;
 if (!document.all) document.captureEvents(Event.MOUSEUP);
 
+/* Version using prompt
+function testAj()
+{
+        // Request the JSON and process it
+    $.ajax({
+        type:'GET',
+        url:"http://api.urbandictionary.com/v0/define?term=" + prompt("type in the word"),
+        //data:"id="+flickrid+"&lang=en-us&format=json&jsoncallback=?",
+        success:function(data) {
 
+                console.log("success!\n");
+                //this prints out the object object
+                console.log(data);
+
+                //saves the thing into an Array
+                theArray = data;
+                var result = "";
+                for (var i = 0; i<theArray.list.length; i++) {
+                    result += ("Definition " + (i+1) + ": " + theArray.list[i].definition + "\n");
+                    result += ("Thumbs up: " + theArray.list[i].thumbs_up + "\n");
+                    result += ("Thumbs down: " + theArray.list[i].thumbs_down + "\n\n");
+                }
+                console.log(result);
+                $('#data').text(result);
+            
+ 
+
+        },
+        
+        dataType:'jsonp'
+    });
+}
+*/
 
 
 

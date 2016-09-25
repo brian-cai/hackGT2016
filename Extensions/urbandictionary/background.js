@@ -9,6 +9,8 @@ chrome.browserAction.onClicked.addListener(function(tab) {
   
 
 });
+
+/*
 var t = '';
 function gText(e) {
     t = (document.all) ? document.selection.createRange().text : document.getSelection();
@@ -20,7 +22,7 @@ function gText(e) {
 }
 document.onmouseup = gText;
 if (!document.all) document.captureEvents(Event.MOUSEUP);
-
+*/
 
 function doIt() {
             function getRandomColor() {
