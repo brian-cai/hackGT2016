@@ -1,4 +1,4 @@
-
+/*
   // Called when the user clicks on the browser action.
 chrome.browserAction.onClicked.addListener(function(tab) {
   // No tabs or host permissions needed!
@@ -8,24 +8,39 @@ chrome.browserAction.onClicked.addListener(function(tab) {
     file: "color.js" 
   });
 
-  alert(document.URL + "\n" + document.title);
-
-  document.writeln("Hello World");
-
 });
+*/
+chrome.browserAction.onClicked.addListener(function(tab) {
+    chrome.tabs.executeScript({
+    file: "color.js" 
+  });
+}
+)
+/*
+//seizure();
+setColor();
 
-//chrome.tabs.create({url: "http://www.google.com"});
+function seizure(){
 
-//chrome.browserAction.setTitle({"tabId": tab.id});
+//setInterval(setColor, 500); 
 
-// trying to change the title
-//chrome.tabs.onHighlighted.addListener(function (tab) {
-//alert("ALERT YOU ARE CHANGING A TAB LOL")
-//setBrowserActionBadge: function(allTasks) {
-//chrome.browserAction.setBadgeText(text: "asdf");
-//chrome.browserAction.setBadgeBackgroundColor(color : #FF0000);
-//}
- 
-//});
+//setInterval(alert("lol"), 500); 
+setInterval(function(){ setColor(); }, 3000);
+}
 
- 
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+function setColor() {
+var color = getRandomColor();
+document.body.style.backgroundColor = color;
+}
+
+    
+*/
